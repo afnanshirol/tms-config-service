@@ -50,7 +50,7 @@ INSERT INTO partner_master (
     'INOX Leisure Limited',
     'PARTNER_WITH_IT',
     'REST_API',
-    '{"baseUrl": "https://api.inoxmovies.com/v1", "authType": "API_KEY", "apiKey": "test-key-123"}',
+    '{"baseUrl": "https://api.inox.com", "authType": "API_KEY", "apiKey": "test-key-123", "endpoints": {"theatres": "/v1/theatres", "halls": "/v1/halls", "shows": "/v1/shows", "prices": "/v1/prices"}}',
     'contact@inoxmovies.com',
     'APPROVED'
 ),
@@ -59,7 +59,7 @@ INSERT INTO partner_master (
     'PVR Cinemas Limited',
     'PARTNER_WITH_IT',
     'SOAP_API',
-    '{"wsdlUrl": "https://api.pvrcinemas.com/theatres?wsdl", "username": "tms_user", "password": "encrypted_password"}',
+    '{"baseUrl": "https://api.pvrcinemas.com", "wsdlUrl": "https://api.pvrcinemas.com/theatres?wsdl", "username": "tms_user", "password": "encrypted_password", "endpoints": {"theatres": "/api/v2/theatres", "shows": "/api/v2/shows"}}',
     'integration@pvrcinemas.com',
     'APPROVED'
 ),
@@ -68,7 +68,7 @@ INSERT INTO partner_master (
     'Carnival Cinemas',
     'PARTNER_WITHOUT_IT',
     'MANUAL_PORTAL',
-    '{"uploadFormat": "Excel", "frequency": "Weekly"}',
+    '{"uploadFormat": "Excel", "frequency": "Weekly", "supportedEntities": ["theatres", "halls", "shows"]}',
     'data@carnivalcinemas.com',
     'PENDING'
 );

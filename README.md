@@ -122,9 +122,15 @@ curl -X PUT http://localhost:8086/api/config/v1/partners/INOX_001/status \
 curl -X PUT http://localhost:8086/api/config/v1/partners/INOX_001/config \
   -H "Content-Type: application/json" \
   -d '{
-    "baseUrl": "https://api.inox.com/v1",
+    "baseUrl": "https://api.inox.com",
     "authType": "API_KEY",
-    "apiKey": "secret-key-123"
+    "apiKey": "secret-key-123",
+    "endpoints": {
+      "theatres": "/v1/theatres",
+      "halls": "/v1/halls",
+      "shows": "/v1/shows",
+      "prices": "/v1/prices"
+    }
   }'
 ```
 
@@ -132,8 +138,8 @@ curl -X PUT http://localhost:8086/api/config/v1/partners/INOX_001/config \
 ```json
 {
   "partnerId": "INOX_001",
-  "partnerName": "INOX Leisure Limited", 
-  "integrationConfig": "{\"baseUrl\":\"https://api.inox.com/v1\",\"authType\":\"API_KEY\"}"
+  "partnerName": "INOX Leisure Limited",
+  "integrationConfig": "{\"baseUrl\":\"https://api.inox.com\",\"authType\":\"API_KEY\",\"endpoints\":{\"theatres\":\"/v1/theatres\",\"halls\":\"/v1/halls\",\"shows\":\"/v1/shows\",\"prices\":\"/v1/prices\"}}"
 }
 ```
 
@@ -260,9 +266,15 @@ curl http://localhost:8086/api/config/v1/integration/partners/INOX_001/config
   "partnerName": "INOX Leisure Limited",
   "integrationProtocol": "REST_API",
   "integrationConfig": {
-    "baseUrl": "https://api.inox.com/v1",
+    "baseUrl": "https://api.inox.com",
     "authType": "API_KEY",
-    "apiKey": "secret-key-123"
+    "apiKey": "secret-key-123",
+    "endpoints": {
+      "theatres": "/v1/theatres",
+      "halls": "/v1/halls",
+      "shows": "/v1/shows",
+      "prices": "/v1/prices"
+    }
   }
 }
 ```
